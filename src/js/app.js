@@ -1,13 +1,16 @@
-function loadTitle(h1Text) {
+function loadTitle(h2Text) {
   fetch("/src/common-app/title.component.html")
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("main_page").innerHTML = data;
 
-      document.getElementById("h1_title").textContent = h1Text;
-      document.getElementById("h1_title").style.color = "purple";
+      let h2 = document.getElementById("h2_title");
+      if (h2) {
+        h2.textContent = h2Text;
+        h2.style.color = "purple";
+      }
     })
     .catch((error) => console.error("Error downloading title:", error));
 }
 
-loadTitle("Home Page!");
+loadTitle("Insert your personal data");

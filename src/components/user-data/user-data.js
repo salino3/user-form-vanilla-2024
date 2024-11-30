@@ -13,12 +13,14 @@ function loadTitleUserData(h2Text) {
       document
         .getElementById("main_page")
         .insertAdjacentHTML("beforeend", data);
-
-      document.getElementById("h2_titleUserData").textContent = h2Text;
+      let h2 = document.getElementById("h2_titleUserData");
+      if (h2) {
+        h2.textContent = h2Text;
+      }
     })
     .catch((error) => console.error("Error downloading title:", error));
 }
 
-loadTitleUserData("Hola hola!");
+loadTitleUserData("¡Hola hola!");
 
 //
