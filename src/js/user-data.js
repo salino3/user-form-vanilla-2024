@@ -1,3 +1,11 @@
+function saveDataUser() {
+  // Aquí puedes agregar la lógica para guardar los datos del formulario o cualquier otro proceso
+  console.log("Saving user data...");
+
+  // Luego redirigimos a la siguiente página, por ejemplo, a una página llamada 'form2.html'
+  window.location.href = "/src/components/address-details.html"; // Asegúrate de que esta URL sea la correcta para tu segunda página
+}
+
 function loadTitleUserData(h2Text) {
   fetch("/src/components/user-data.html")
     .then((response) => response.text())
@@ -12,3 +20,5 @@ function loadTitleUserData(h2Text) {
 }
 
 loadTitleUserData("Hola hola!");
+
+//
