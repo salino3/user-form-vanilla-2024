@@ -1,10 +1,3 @@
-const clickMeButton = document.getElementById("clickMe");
-if (clickMeButton) {
-  clickMeButton.addEventListener("click", function () {
-    alert("Button clicked!");
-  });
-}
-
 // function loadHeader() {
 //   fetch("/src/components/header.component.html")
 //     .then((response) => response.text())
@@ -67,7 +60,5 @@ function loadTitle(h1Text, h2Text) {
     })
     .catch((error) => console.error("Error downloading title:", error));
 }
-
-// loadHeader();
 
 loadTitle("Home Page!", "H2 of Home page");
