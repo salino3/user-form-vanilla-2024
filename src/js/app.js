@@ -1,5 +1,5 @@
 function loadTitle(h1Text) {
-  fetch("/src/components/title.component.html")
+  fetch("/src/common-app/title.component.html")
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("main_page").innerHTML = data;
