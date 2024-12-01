@@ -1,14 +1,38 @@
 @import "../components/user-data/user-data.scss";
 
+:root {
+  --color-primary: #1983ca;
+  --color-secondary: #f1c40f;
+  --color-tertiary: #ce3422;
+  --color-quaternary: #19c460;
+  --color-05: #0c0606;
+  --color-06: #fafafa;
+  --color-primary-background: #ededed;
+  --color-secondary-background: #322d1b;
+  --color-tertiary-background: gold;
+  --color-text-primary: #34495e;
+  --color-text-secondary: #95a5a6;
+  --color-text-tertiary: #f39c12;
+  --color-text-quaternary: #27ae60;
+  --font-primary: Arial, sans-serif;
+  --size-primary: 1rem;
+  --size-half: 0.5rem;
+  --size-secondary: 1.2rem;
+  --size-tertiary: 1.4rem;
+}
+
 html body {
   padding: 0;
   margin: 0;
+  font-size: 16px;
+  background-color: var(--color-secondary-background);
+  color: var(--color-primary);
 }
 
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  //   background-color: black;
+  font-size: 1rem;
 }
 
 button {
