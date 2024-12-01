@@ -10,6 +10,7 @@
   --color-primary-background: #ededed;
   --color-secondary-background: #322d1b;
   --color-tertiary-background: gold;
+  --color-quaterny-background: #f0d123;
   --color-text-primary: #34495e;
   --color-text-secondary: #95a5a6;
   --color-text-tertiary: #f39c12;
@@ -28,12 +29,19 @@ html body {
   font-size: 16px;
   background-color: var(--color-secondary-background);
   color: var(--color-primary);
+  min-height: 100vh;
 }
 
 body {
   font-family: Arial, sans-serif;
   text-align: center;
   font-size: 1rem;
+  color: --color-text-primary;
+  background: linear-gradient(
+    335deg,
+    var(--color-tertiary-background) 30%,
+    var(--color-secondary-background) 90%
+  );
 }
 
 button {
