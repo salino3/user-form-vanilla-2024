@@ -2,7 +2,7 @@
   padding: var(--size-double);
   background-color: var(--color-tertiary-background);
   color: var(--color-05);
-  border: solid red 2px;
+  border: solid var(--color-quaternary) 2px;
 }
 
 :root {
@@ -45,4 +45,6 @@ button {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+  background-color: var(--color-tertiary);
+  color: var(--color-06);
 }
