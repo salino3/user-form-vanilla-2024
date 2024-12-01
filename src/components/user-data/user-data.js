@@ -21,6 +21,6 @@ function loadTitleUserData(h2Text) {
     .catch((error) => console.error("Error downloading title:", error));
 }
 
-loadTitleUserData("¡Hola hola!");
-
-//
+window.onload = function () {
+  loadTitleUserData("¡Hola hola!");
+};

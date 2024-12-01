@@ -13,4 +13,6 @@ function loadTitle(h2Text) {
     .catch((error) => console.error("Error downloading title:", error));
 }
 
-loadTitle("Insert your personal data");
+window.onload = function () {
+  loadTitle("Insert your personal data");
+};
