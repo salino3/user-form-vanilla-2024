@@ -1,7 +1,4 @@
-.containerUserDataForm {
-  padding: 2rem;
-  background-color: red;
-}
+@import "../components/user-data/user-data.scss";
 
 html body {
   padding: 0;
@@ -11,6 +8,7 @@ html body {
 body {
   font-family: Arial, sans-serif;
   text-align: center;
+  //   background-color: black;
 }
 
 button {

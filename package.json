@@ -5,13 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "lite-server --watch",
-    "deploy": "gh-pages -d ."
+    "deploy": "gh-pages -d .",
+    "scss": "sass --watch src/scss:src/css --no-source-map"
   },
   "devDependencies": {
     "gh-pages": "^6.2.0",
-    "lite-server": "^2.6.1"
-  },
-  "dependencies": {
+    "lite-server": "^2.6.1",
     "sass": "^1.81.0"
   }
 }
