@@ -6,6 +6,21 @@ function saveDataUser() {
   window.location.href = "/src/components/addess-details/address-details.html"; // Asegúrate de que esta URL sea la correcta para tu segunda página
 }
 
+function loadTitle(h2Text) {
+  fetch("/src/common-app/title.component.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("main_page").innerHTML = data;
+
+      let h2 = document.getElementById("h2_title");
+      if (h2) {
+        h2.textContent = h2Text;
+        h2.style.color = "purple";
+      }
+    })
+    .catch((error) => console.error("Error downloading title:", error));
+}
+
 function loadTitleUserData(h2Text) {
   fetch("/src/components/user-data/user-data.html")
     .then((response) => response.text())
@@ -22,5 +37,6 @@ function loadTitleUserData(h2Text) {
 }
 
 window.onload = function () {
+  loadTitle("Insert your personal data");
   loadTitleUserData("¡Hola hola!");
 };
