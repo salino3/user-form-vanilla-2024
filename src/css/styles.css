@@ -1,7 +1,8 @@
 .containerUserDataForm {
-  padding: 2rem;
+  padding: var(--size-double);
   background-color: var(--color-tertiary-background);
   color: var(--color-05);
+  border: solid red 2px;
 }
 
 :root {
@@ -23,6 +24,7 @@
   --size-half: 0.5rem;
   --size-secondary: 1.2rem;
   --size-tertiary: 1.4rem;
+  --size-double: 2rem;
 }
 
 html body {
