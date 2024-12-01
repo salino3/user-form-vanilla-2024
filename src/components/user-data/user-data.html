@@ -9,14 +9,28 @@
   </head>
   <div class="containerUserDataForm">
     <h2 id="h2_titleUserData"></h2>
-    <button onclick="saveDataUser()">Save Personal Data</button>
-
-    <script src="./user-data.js"></script>
-
+    <div class="containerForm">
+      <form action="/save-data" id="personalInfoForm">
+        <label for="name"><b>Name</b>:</label>
+        <input type="text" id="name" name="name" required />
+      </form>
+    </div>
+    <button class="btnSave" onclick="saveDataUser()">
+      Save Personal Information
+    </button>
     <style>
-      button {
-        cursor: pointer;
+      .containerUserDataForm {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: var(--size-primary);
+        padding: var(--size-double);
+        background: var(--color-secondary-background);
+        height: 50vh;
+        box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.2);
       }
     </style>
+    <script src="./user-data.js"></script>
   </div>
 </html>
