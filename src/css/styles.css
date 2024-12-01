@@ -1,7 +1,8 @@
 .containerUserDataForm {
-  padding: 2rem;
+  padding: var(--size-double);
   background-color: var(--color-tertiary-background);
   color: var(--color-05);
+  border: solid red 2px;
 }
 
 :root {
