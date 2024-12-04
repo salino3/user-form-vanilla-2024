@@ -15,7 +15,7 @@ function loadTitle(h2Text) {
       let h2 = document.getElementById("h2_title");
       if (h2) {
         h2.textContent = h2Text;
-        h2.style.color = "var(--color-06)";
+        h2.style.color = "var(--color-secondary)";
         h2.style.fontSize = "var(--size-secondary)";
       }
     })
@@ -39,5 +39,5 @@ function loadTitleUserData(h2Text) {
 
 window.onload = function () {
   loadTitle("Insert your personal information");
-  loadTitleUserData("¡Hola hola!");
+  loadTitleUserData();
 };

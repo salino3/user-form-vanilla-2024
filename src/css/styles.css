@@ -6,6 +6,7 @@
   gap: var(--size-primary);
   padding: var(--size-double);
   background: var(--color-quaterny-background);
+  color: var(--color-secondary);
   height: 50vh;
   box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.2);
 }
@@ -18,8 +19,20 @@
   width: 700px;
   max-width: 70vw;
 }
+.containerUserDataForm .containerForm #personalInfoForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--size-primary);
+}
 .containerUserDataForm .btnSave {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
+  width: 70px;
 }
 
 @media screen and (max-width: 700px) {
@@ -28,20 +41,20 @@
   }
 }
 :root {
-  --color-primary: #1983ca;
-  --color-secondary: #f1c40f;
-  --color-tertiary: #ce3422;
-  --color-quaternary: #19c460;
-  --color-05: #0c0606;
+  --color-primary: #232c2b;
+  --color-secondary: #444d3a;
+  --color-tertiary: #9d7551;
+  --color-quaternary: #232c2b;
+  --color-05: #342214;
   --color-06: #fafafa;
-  --color-primary-background: #ededed;
-  --color-secondary-background: #322d1b;
-  --color-tertiary-background: gold;
-  --color-quaterny-background: #f0d123;
-  --color-text-primary: #34495e;
-  --color-text-secondary: #95a5a6;
+  --color-primary-background: #f1ead7;
+  --color-secondary-background: #3f0c09;
+  --color-tertiary-background: #d1b48c;
+  --color-quaterny-background: #cebbaa;
+  --color-text-primary: #232c2b;
+  --color-text-secondary: #444d3a;
   --color-text-tertiary: #f39c12;
-  --color-text-quaternary: #27ae60;
+  --color-text-quaternary: #35434e;
   --font-primary: Arial, sans-serif;
   --size-primary: 1rem;
   --size-half: 0.5rem;
@@ -54,7 +67,7 @@ html body {
   padding: 0;
   margin: 0;
   font-size: 16px;
-  background-color: var(--color-secondary-background);
+  background-color: var(--color-primary-background);
   color: var(--color-primary);
   min-height: 100vh;
 }
@@ -63,8 +76,6 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   font-size: 1rem;
-  color: --color-text-primary;
-  background: linear-gradient(335deg, var(--color-tertiary-background) 30%, var(--color-secondary-background) 90%);
 }
 
 button {

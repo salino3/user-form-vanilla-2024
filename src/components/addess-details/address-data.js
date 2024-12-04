@@ -5,7 +5,8 @@ function loadTitle(h2Text) {
       document.getElementById("main_pages").innerHTML = data;
 
       document.getElementById("h2_title").textContent = h2Text;
-      document.getElementById("h2_title").style.color = "var(--color-06)";
+      document.getElementById("h2_title").style.color =
+        "var(--color-secondary)";
       document.getElementById("h2_title").style.fontSize =
         "var(--size-secondary)";
     })
