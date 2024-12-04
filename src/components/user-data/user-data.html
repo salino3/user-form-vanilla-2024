@@ -8,16 +8,19 @@
     <link rel="stylesheet" href="./user-data.scss" />
   </head>
   <div class="containerUserDataForm">
-    <h2 id="h2_titleUserData"></h2>
     <div class="containerForm">
       <form action="/save-data" id="personalInfoForm">
-        <label for="name"><b>Name</b>:</label>
-        <input type="text" id="name" name="name" required />
+        <div class="boxInput">
+          <label for="name"><b>Name</b>:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="boxInput">
+          <label for="name"><b>Surname</b>:</label>
+          <input type="text" id="surname" name="surname" required />
+        </div>
+        <button class="btnSave" onclick="saveDataUser()">Save</button>
       </form>
     </div>
-    <button class="btnSave" onclick="saveDataUser()">
-      Save Personal Information
-    </button>
     <style>
       .containerUserDataForm {
         display: flex;

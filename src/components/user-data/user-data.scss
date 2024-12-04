@@ -6,6 +6,7 @@
   gap: var(--size-primary);
   padding: var(--size-double);
   background: var(--color-quaterny-background);
+  color: var(--color-secondary);
   height: 50vh;
   box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.2);
 
@@ -17,10 +18,23 @@
     min-width: 300px;
     width: 700px;
     max-width: 70vw;
+
+    #personalInfoForm {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: var(--size-primary);
+    }
   }
 
   .btnSave {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+    width: 70px;
   }
 }
 
