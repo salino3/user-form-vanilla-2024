@@ -1,9 +1,22 @@
-function saveDataUser() {
-  // Aquí puedes agregar la lógica para guardar los datos del formulario o cualquier otro proceso
-  console.log("Saving user data...");
+function personalInfoForm(event) {
+  event.preventDefault();
 
-  // Luego redirigimos a la siguiente página, por ejemplo, a una página llamada 'form2.html'
-  window.location.href = "/src/components/addess-details/address-details.html"; // Asegúrate de que esta URL sea la correcta para tu segunda página
+  const user = {
+    name: document.getElementById("name").value,
+    surname: document.getElementById("surname").value,
+    email: document.getElementById("email").value,
+    phoneNumber: document.getElementById("phoneNumber").value,
+  };
+  console.log("User data:", user);
+
+  const allFieldsFilled = Object.keys(user).every((key) => user[key]);
+
+  if (allFieldsFilled) {
+    window.location.href =
+      "/src/components/addess-details/address-details.html";
+  } else {
+    alert("Please fill all inputs.");
+  }
 }
 
 function loadTitle(h2Text) {
@@ -37,7 +50,33 @@ function loadTitleUserData(h2Text) {
     .catch((error) => console.error("Error downloading title:", error));
 }
 
+function loadBoxButtons(txtSave) {
+  fetch("/src/common-app/box-buttons.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("main_page").innerHTML += data;
+      let form = document.getElementById("personalInfoForm");
+
+      let containerBtnSave = document.getElementById("containerBoxButtons");
+      let btnSave = document.getElementById("btnSave");
+      if (containerBtnSave && btnSave) {
+        btnSave.textContent = txtSave;
+        // btnSave.addEventListener("click", function (event) {
+        //   event.preventDefault();
+        //   alert("hola");
+        // });
+
+        containerBtnSave.appendChild(btnSave);
+        form.appendChild(containerBtnSave);
+      } else {
+        console.error("btnSave no se encuentra en el DOM");
+      }
+    })
+    .catch((error) => console.error("Error downloading box buttons:", error));
+}
+
 window.onload = function () {
   loadTitle("Insert your personal information");
   loadTitleUserData();
+  loadBoxButtons("Save");
 };

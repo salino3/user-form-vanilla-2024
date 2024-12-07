@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Data</title>
-    <link rel="stylesheet" href="../../css/styles.scss" />
-    <link rel="stylesheet" href="./user-data.scss" />
+    <!-- <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="./user-data.css" /> -->
   </head>
   <div class="containerUserDataForm">
     <div class="containerForm">
-      <form action="/save-data" id="personalInfoForm">
+      <form
+        action="/save-data"
+        id="personalInfoForm"
+        onsubmit="personalInfoForm(event)"
+      >
         <div class="boxInput">
           <label for="name"><b>Name</b>:</label>
           <input type="text" id="name" name="name" required />
@@ -18,7 +22,14 @@
           <label for="name"><b>Surname</b>:</label>
           <input type="text" id="surname" name="surname" required />
         </div>
-        <button class="btnSave" onclick="saveDataUser()">Save</button>
+        <div class="boxInput">
+          <label for="name"><b>Email</b>:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="boxInput">
+          <label for="name"><b>Phone number</b>:</label>
+          <input type="text" id="phoneNumber" name="phoneNumber" required />
+        </div>
       </form>
     </div>
     <style>
