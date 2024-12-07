@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box buttons</title>
+  </head>
+  <div id="containerBoxButtons" class="containerBoxButtons">
+    <div class="boxBtnReset">
+      <button aria-label="Resets form" class="btnReset" type="reset">
+        Reset
+      </button>
+    </div>
+    <div class="boxBtnSave">
+      <button
+        aria-label="Executes form"
+        type="submit"
+        id="btnSave"
+        class="btnSave"
+      ></button>
+    </div>
+
+    <style>
+      .containerBoxButtons {
+        font-style: italic;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: var(--size-primary);
+      }
+    </style>
+  </div>
+</html>

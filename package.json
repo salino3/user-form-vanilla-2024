@@ -4,7 +4,7 @@
   "description": "Simple web project with lite-server",
   "main": "index.js",
   "scripts": {
-    "start": "lite-server --watch",
+    "start": "lite-server --watch --port 3000",
     "deploy": "gh-pages -d .",
     "scss": "sass --watch src/scss:src/css --no-source-map"
   },
