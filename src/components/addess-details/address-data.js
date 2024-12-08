@@ -1,3 +1,5 @@
+import { executingPage } from "../../js/app.js";
+
 function addressInfoForm(event) {
   event.preventDefault();
 
@@ -71,16 +73,6 @@ function loadBoxButtons(txtSave) {
       }
     })
     .catch((error) => console.error("Error downloading box buttons:", error));
-}
-
-function executingPage() {
-  return new Promise((resolve, reject) => {
-    try {
-      resolve();
-    } catch (error) {
-      reject("Error: " + error);
-    }
-  });
 }
 
 window.onload = function () {
