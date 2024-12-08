@@ -73,8 +73,20 @@ function loadBoxButtons(txtSave) {
     .catch((error) => console.error("Error downloading box buttons:", error));
 }
 
+function executingPage() {
+  return new Promise((resolve, reject) => {
+    try {
+      resolve();
+    } catch (error) {
+      reject("Error: " + error);
+    }
+  });
+}
+
 window.onload = function () {
-  loadTitle("Insert address data");
-  loadAddressData();
-  loadBoxButtons("Save");
+  executingPage()
+    .then(() => loadTitle("Insert address data"))
+    .then(() => loadAddressData())
+    .then(() => loadBoxButtons("Save"))
+    .catch((error) => console.error(error));
 };
