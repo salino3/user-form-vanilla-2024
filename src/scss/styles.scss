@@ -1,4 +1,5 @@
 @import "../components/user-data/user-data.scss";
+@import "../components/addess-details/address-details.scss";
 
 :root {
   --color-primary: #232c2b;
@@ -37,19 +38,45 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   font-size: 1rem;
-}
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: var(--color-tertiary);
-  color: var(--color-06);
-  border-radius: var(--size-primary);
-}
+  /* Style for autofill in Webkit (Chrome, Safari) */
+  input:-webkit-autofill {
+    background-color: var(--color-primary) !important;
+    color: var(--color-07) !important;
+    transition: background-color 5000s ease-in-out 0s,
+      color 5000s ease-in-out 0s;
+  }
 
-button:active {
-  font-size: 15px;
-  filter: drop-shadow(3px 2px 7px var(--color-text-tertiary));
-  background-color: var(--color-05);
+  /* Style for autofill with focus */
+  input:-webkit-autofill:focus {
+    background-color: var(--color-primary) !important;
+    color: var(--color-07) !important;
+  }
+
+  /* Styles for Firefox */
+  input:-moz-autofill {
+    background-color: var(--color-primary) !important;
+    color: var(--color-07) !important;
+  }
+
+  /* Styles for autofill with focus in Firefox */
+  input:-moz-autofill:focus {
+    background-color: var(--color-primary) !important;
+    color: var(--color-07) !important;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: var(--color-tertiary);
+    color: var(--color-06);
+    border-radius: var(--size-primary);
+  }
+
+  button:active {
+    font-size: 15px;
+    filter: drop-shadow(3px 2px 7px var(--color-text-tertiary));
+    background-color: var(--color-05);
+  }
 }

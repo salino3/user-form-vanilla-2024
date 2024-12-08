@@ -29,7 +29,7 @@ function loadTitle(h2Text) {
 
       let spanTitle = document.getElementById("spanTitle");
       let h2 = document.getElementById("h2_title");
-      if (h2) {
+      if (h2 && spanTitle) {
         spanTitle.style.display = "none";
         h2.textContent = h2Text;
         h2.style.color = "var(--color-secondary)";
@@ -39,17 +39,13 @@ function loadTitle(h2Text) {
     .catch((error) => console.error("Error downloading title:", error));
 }
 
-function loadTitleUserData(h2Text) {
+function loadUserData() {
   fetch("/src/components/user-data/user-data.html")
     .then((response) => response.text())
     .then((data) => {
       document
         .getElementById("main_page")
         .insertAdjacentHTML("beforeend", data);
-      let h2 = document.getElementById("h2_titleUserData");
-      if (h2) {
-        h2.textContent = h2Text;
-      }
     })
     .catch((error) => console.error("Error downloading title:", error));
 }
@@ -82,6 +78,6 @@ function loadBoxButtons(txtSave) {
 
 window.onload = function () {
   loadTitle("Insert your personal information");
-  loadTitleUserData();
+  loadUserData();
   loadBoxButtons("Save");
 };
