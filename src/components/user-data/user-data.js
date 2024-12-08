@@ -12,6 +12,8 @@ function personalInfoForm(event) {
   const allFieldsFilled = Object.keys(user).every((key) => user[key]);
 
   if (allFieldsFilled) {
+    localStorage.setItem("user", JSON.stringify(user));
+
     window.location.href =
       "/src/components/addess-details/address-details.html";
   } else {
@@ -25,8 +27,10 @@ function loadTitle(h2Text) {
     .then((data) => {
       document.getElementById("main_page").innerHTML = data;
 
+      let spanTitle = document.getElementById("spanTitle");
       let h2 = document.getElementById("h2_title");
       if (h2) {
+        spanTitle.style.display = "none";
         h2.textContent = h2Text;
         h2.style.color = "var(--color-secondary)";
         h2.style.fontSize = "var(--size-secondary)";
