@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Data</title>
-    <!-- <link rel="stylesheet" href="../../css/styles.css" />
-    <link rel="stylesheet" href="./user-data.css" /> -->
+    <!-- <link rel="stylesheet" href="../../css/styles.css" /> -->
+    <!-- <link rel="stylesheet" href="./user-data.scss" /> -->
   </head>
   <div class="containerUserDataForm">
     <div class="containerForm">
@@ -15,34 +15,60 @@
         onsubmit="personalInfoForm(event)"
       >
         <div class="boxInput">
-          <label for="name"><b>Name</b>:</label>
+          <label for="name"><b>Name</b></label>
           <input type="text" id="name" name="name" required />
         </div>
         <div class="boxInput">
-          <label for="name"><b>Surname</b>:</label>
+          <label for="name"><b>Surname</b></label>
           <input type="text" id="surname" name="surname" required />
         </div>
         <div class="boxInput">
-          <label for="name"><b>Email</b>:</label>
+          <label for="name"><b>Email</b></label>
           <input type="email" id="email" name="email" required />
         </div>
         <div class="boxInput">
-          <label for="name"><b>Phone number</b>:</label>
+          <label for="name"><b>Phone number</b></label>
           <input type="text" id="phoneNumber" name="phoneNumber" required />
         </div>
       </form>
     </div>
     <style>
-      .containerUserDataForm {
+      .containerForm {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center;
+        gap: var(--size-half);
+        padding: var(--size-half);
+        min-width: 300px;
+        width: 700px;
+        max-width: 70vw;
+        min-height: 50vh;
+        height: 100%;
+        box-sizing: content-box;
+        color: var(--color-secondary);
+      }
+      #personalInfoForm {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         align-items: center;
+        height: 100%;
         gap: var(--size-primary);
-        padding: var(--size-double);
-        background: var(--color-secondary-background);
-        height: 50vh;
-        box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.2);
+      }
+      .boxInput {
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-half);
+        width: 100%;
+        max-width: 300px;
+      }
+      .boxInput input {
+        padding: var(--size-half);
+        border: none;
+        border-radius: 5px;
+        background-color: var(--color-primary);
+        color: var(--color-07);
+        font-size: var(--size-small);
       }
     </style>
     <script src="./user-data.js"></script>

@@ -15,7 +15,7 @@ function personalInfoForm(event) {
     window.location.href =
       "/src/components/addess-details/address-details.html";
   } else {
-    alert("Please fill all inputs.");
+    alert("Please refill all inputs.");
   }
 }
 
@@ -60,6 +60,7 @@ function loadBoxButtons(txtSave) {
       let containerBtnSave = document.getElementById("containerBoxButtons");
       let btnSave = document.getElementById("btnSave");
       if (containerBtnSave && btnSave) {
+        containerBtnSave.style.marginTop = "var(--size-primary)";
         btnSave.textContent = txtSave;
         // btnSave.addEventListener("click", function (event) {
         //   event.preventDefault();
@@ -69,7 +70,7 @@ function loadBoxButtons(txtSave) {
         containerBtnSave.appendChild(btnSave);
         form.appendChild(containerBtnSave);
       } else {
-        console.error("btnSave no se encuentra en el DOM");
+        console.error("btnSave is not present in the DOM");
       }
     })
     .catch((error) => console.error("Error downloading box buttons:", error));
