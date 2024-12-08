@@ -91,6 +91,9 @@
   gap: var(--size-half);
   width: 100%;
   max-width: 300px;
+  /* Estilo para autofill en Webkit (Chrome, Safari) */
+  /* Estilo para autofill con foco */
+  /* Estilos para Firefox */
 }
 .containerAddresDataForm .containerForm #addressInfoForm .boxInput input {
   padding: var(--size-half);
@@ -99,6 +102,23 @@
   background-color: var(--color-primary);
   color: var(--color-07);
   font-size: var(--size-small);
+}
+.containerAddresDataForm .containerForm #addressInfoForm .boxInput input:-webkit-autofill {
+  background-color: var(--color-primary) !important;
+  color: var(--color-07) !important;
+  transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s; /* Mantiene tanto el fondo como el color */
+}
+.containerAddresDataForm .containerForm #addressInfoForm .boxInput input:-webkit-autofill:focus {
+  background-color: var(--color-primary) !important;
+  color: var(--color-07) !important;
+}
+.containerAddresDataForm .containerForm #addressInfoForm .boxInput input:-moz-autofill {
+  background-color: var(--color-primary) !important;
+  color: var(--color-07) !important;
+}
+.containerAddresDataForm .containerForm #addressInfoForm .boxInput input:-moz-autofill:focus {
+  background-color: var(--color-primary) !important;
+  color: var(--color-07) !important;
 }
 
 @media screen and (max-width: 700px) {
@@ -143,9 +163,29 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   font-size: 1rem;
+  /* Style for autofill in Webkit (Chrome, Safari) */
+  /* Style for autofill with focus */
+  /* Styles for Firefox */
+  /* Styles for autofill with focus in Firefox */
 }
-
-button {
+body input:-webkit-autofill {
+  background-color: var(--color-primary) !important;
+  color: var(--color-07) !important;
+  transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s;
+}
+body input:-webkit-autofill:focus {
+  background-color: var(--color-primary) !important;
+  color: var(--color-07) !important;
+}
+body input:-moz-autofill {
+  background-color: var(--color-primary) !important;
+  color: var(--color-07) !important;
+}
+body input:-moz-autofill:focus {
+  background-color: var(--color-primary) !important;
+  color: var(--color-07) !important;
+}
+body button {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
@@ -153,8 +193,7 @@ button {
   color: var(--color-06);
   border-radius: var(--size-primary);
 }
-
-button:active {
+body button:active {
   font-size: 15px;
   filter: drop-shadow(3px 2px 7px var(--color-text-tertiary));
   background-color: var(--color-05);
