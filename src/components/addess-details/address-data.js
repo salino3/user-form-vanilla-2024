@@ -4,11 +4,18 @@ function loadTitle(h2Text) {
     .then((data) => {
       document.getElementById("main_pages").innerHTML = data;
 
-      document.getElementById("h2_title").textContent = h2Text;
-      document.getElementById("h2_title").style.color =
-        "var(--color-secondary)";
-      document.getElementById("h2_title").style.fontSize =
-        "var(--size-secondary)";
+      let spanTitle = document.getElementById("spanTitle");
+      let h2 = document.getElementById("h2_title");
+
+      if (h2 && spanTitle) {
+        h2.textContent = h2Text;
+        h2.style.color = "var(--color-secondary)";
+        h2.style.fontSize = "var(--size-secondary)";
+        spanTitle.addEventListener("click", function (event) {
+          event.preventDefault();
+          window.location.href = "/";
+        });
+      }
     })
     .catch((error) => console.error("Error downloading title:", error));
 }

@@ -29,7 +29,7 @@ function loadTitle(h2Text) {
 
       let spanTitle = document.getElementById("spanTitle");
       let h2 = document.getElementById("h2_title");
-      if (h2) {
+      if (h2 && spanTitle) {
         spanTitle.style.display = "none";
         h2.textContent = h2Text;
         h2.style.color = "var(--color-secondary)";
