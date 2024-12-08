@@ -91,9 +91,6 @@
   gap: var(--size-half);
   width: 100%;
   max-width: 300px;
-  /* Estilo para autofill en Webkit (Chrome, Safari) */
-  /* Estilo para autofill con foco */
-  /* Estilos para Firefox */
 }
 .containerAddresDataForm .containerForm #addressInfoForm .boxInput input {
   padding: var(--size-half);
@@ -102,23 +99,6 @@
   background-color: var(--color-primary);
   color: var(--color-07);
   font-size: var(--size-small);
-}
-.containerAddresDataForm .containerForm #addressInfoForm .boxInput input:-webkit-autofill {
-  background-color: var(--color-primary) !important;
-  color: var(--color-07) !important;
-  transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s; /* Mantiene tanto el fondo como el color */
-}
-.containerAddresDataForm .containerForm #addressInfoForm .boxInput input:-webkit-autofill:focus {
-  background-color: var(--color-primary) !important;
-  color: var(--color-07) !important;
-}
-.containerAddresDataForm .containerForm #addressInfoForm .boxInput input:-moz-autofill {
-  background-color: var(--color-primary) !important;
-  color: var(--color-07) !important;
-}
-.containerAddresDataForm .containerForm #addressInfoForm .boxInput input:-moz-autofill:focus {
-  background-color: var(--color-primary) !important;
-  color: var(--color-07) !important;
 }
 
 @media screen and (max-width: 700px) {
