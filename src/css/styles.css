@@ -43,6 +43,7 @@
   border: none;
   border-radius: 5px;
   background-color: var(--color-primary);
+  color: var(--color-07);
   font-size: var(--size-small);
 }
 
@@ -96,4 +97,11 @@ button {
   cursor: pointer;
   background-color: var(--color-tertiary);
   color: var(--color-06);
+  border-radius: var(--size-primary);
+}
+
+button:active {
+  font-size: 15px;
+  filter: drop-shadow(3px 2px 7px var(--color-text-tertiary));
+  background-color: var(--color-05);
 }
