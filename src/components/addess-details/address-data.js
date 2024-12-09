@@ -68,6 +68,28 @@ function loadBoxButtons(txtSave) {
           event.preventDefault();
           window.location.href = "/";
         });
+
+        // Input Values
+        const street = document.getElementById("street");
+        const city = document.getElementById("city");
+        const country = document.getElementById("country");
+        const zipCode = document.getElementById("zipCode");
+
+        const storedUser = JSON.parse(localStorage.getItem("address"));
+        if (storedUser) {
+          if (storedUser.street) {
+            street.value = storedUser.street;
+          }
+          if (storedUser.city) {
+            city.value = storedUser.city;
+          }
+          if (storedUser.country) {
+            country.value = storedUser.country;
+          }
+          if (storedUser.zipCode) {
+            zipCode.value = storedUser.zipCode;
+          }
+        }
         containerBtnSave.appendChild(btnSave);
         form.appendChild(containerBtnSave);
       } else {

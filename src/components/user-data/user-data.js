@@ -67,6 +67,29 @@ function loadBoxButtons(txtSave) {
           personalInfoForm();
         });
 
+        // Input Values
+        const name = document.getElementById("name");
+        const surname = document.getElementById("surname");
+        const email = document.getElementById("email");
+        const phoneNumber = document.getElementById("phoneNumber");
+
+        const storedUser = JSON.parse(localStorage.getItem("user"));
+        if (storedUser) {
+          if (storedUser.name) {
+            name.value = storedUser.name;
+          }
+          if (storedUser.surname) {
+            surname.value = storedUser.surname;
+          }
+          if (storedUser.email) {
+            email.value = storedUser.email;
+          }
+          if (storedUser.phoneNumber) {
+            phoneNumber.value = storedUser.phoneNumber;
+          }
+        }
+
+        //
         containerBtnSave.appendChild(btnSave);
         form.appendChild(containerBtnSave);
       } else {
