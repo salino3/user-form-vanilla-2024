@@ -1,20 +1,20 @@
 import { executingPage } from "../../js/app.js";
 
-function addressInfoForm() {
-  const address = {
-    street: document.getElementById("street").value,
-    city: document.getElementById("city").value,
-    country: document.getElementById("country").value,
-    zipCode: document.getElementById("zipCode").value,
+function paymentInfoForm() {
+  const payment = {
+    cardNumber: document.getElementById("cardNumber").value,
+    cardHolderName: document.getElementById("cardHolderName").value,
+    expiryDate: document.getElementById("expiryDate").value,
+    cvv: document.getElementById("cvv").value,
   };
-  console.log("Address data:", address);
+  console.log("Payment data:", payment);
 
-  const allFieldsFilled = Object.keys(address).every((key) => address[key]);
+  const allFieldsFilled = Object.keys(payment).every((key) => payment[key]);
 
   if (allFieldsFilled) {
-    localStorage.setItem("address", JSON.stringify(address));
+    localStorage.setItem("payment", JSON.stringify(payment));
 
-    window.location.href = "/src/components/payment-data/payment-data.html";
+    window.location.href = "/";
   } else {
     alert("Please refill all inputs.");
   }
@@ -37,8 +37,8 @@ function loadTitle(h2Text) {
     .catch((error) => console.error("Error downloading title:", error));
 }
 
-function loadAddressData() {
-  fetch("./address-details.html")
+function loadPaymentData() {
+  fetch("./payment-data.html")
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("main_page").innerHTML += data;
@@ -51,7 +51,7 @@ function loadBoxButtons(txtSave) {
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("main_page").innerHTML += data;
-      let form = document.getElementById("addressInfoForm");
+      let form = document.getElementById("paymentInfoForm");
 
       let containerBtnSave = document.getElementById("containerBoxButtons");
       let btnSave = document.getElementById("btnSave");
@@ -62,32 +62,33 @@ function loadBoxButtons(txtSave) {
         btnSave.textContent = txtSave;
         btnSave.addEventListener("click", function (event) {
           event.preventDefault();
-          addressInfoForm();
+          paymentInfoForm();
         });
         spanTitle.addEventListener("click", function (event) {
           event.preventDefault();
-          window.location.href = "/";
+          window.location.href = "../addess-details/address-details.html";
         });
 
         // Input Values
-        const street = document.getElementById("street");
-        const city = document.getElementById("city");
-        const country = document.getElementById("country");
-        const zipCode = document.getElementById("zipCode");
+        const cardNumber = document.getElementById("cardNumber");
+        const cardHolderName = document.getElementById("cardHolderName");
+        const expiryDate = document.getElementById("expiryDate");
+        const cvv = document.getElementById("cvv");
 
-        const storedUser = JSON.parse(localStorage.getItem("address"));
+        const storedUser = JSON.parse(localStorage.getItem("payment"));
         if (storedUser) {
-          if (storedUser.street) {
-            street.value = storedUser.street;
+          console.log("Stored payment data:", storedUser);
+          if (storedUser.cardNumber) {
+            cardNumber.value = storedUser.cardNumber;
           }
-          if (storedUser.city) {
-            city.value = storedUser.city;
+          if (storedUser.cardHolderName) {
+            cardHolderName.value = storedUser.cardHolderName;
           }
-          if (storedUser.country) {
-            country.value = storedUser.country;
+          if (storedUser.expiryDate) {
+            expiryDate.value = storedUser.expiryDate;
           }
-          if (storedUser.zipCode) {
-            zipCode.value = storedUser.zipCode;
+          if (storedUser.cvv) {
+            cvv.value = storedUser.cvv;
           }
         }
         containerBtnSave.appendChild(btnSave);
@@ -101,8 +102,8 @@ function loadBoxButtons(txtSave) {
 
 window.onload = function () {
   executingPage()
-    .then(() => loadTitle("Insert address data"))
-    .then(() => loadAddressData())
+    .then(() => loadTitle("Insert payment data"))
+    .then(() => loadPaymentData())
     .then(() => loadBoxButtons("Save"))
     .catch((error) => console.error(error));
 };
