@@ -1,8 +1,6 @@
 import { executingPage } from "../../js/app.js";
 
-function addressInfoForm(event) {
-  event.preventDefault();
-
+function addressInfoForm() {
   const address = {
     street: document.getElementById("street").value,
     city: document.getElementById("city").value,
@@ -62,6 +60,10 @@ function loadBoxButtons(txtSave) {
       if (containerBtnSave && btnSave && spanTitle) {
         containerBtnSave.style.marginTop = "var(--size-primary)";
         btnSave.textContent = txtSave;
+        btnSave.addEventListener("click", function (event) {
+          event.preventDefault();
+          addressInfoForm();
+        });
         spanTitle.addEventListener("click", function (event) {
           event.preventDefault();
           window.location.href = "/";

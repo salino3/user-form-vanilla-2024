@@ -1,6 +1,6 @@
-function personalInfoForm(event) {
-  event.preventDefault();
+import { executingPage } from "../../js/app.js";
 
+function personalInfoForm() {
   const user = {
     name: document.getElementById("name").value,
     surname: document.getElementById("surname").value,
@@ -62,10 +62,10 @@ function loadBoxButtons(txtSave) {
       if (containerBtnSave && btnSave) {
         containerBtnSave.style.marginTop = "var(--size-primary)";
         btnSave.textContent = txtSave;
-        // btnSave.addEventListener("click", function (event) {
-        //   event.preventDefault();
-        //   alert("hola");
-        // });
+        btnSave.addEventListener("click", function (event) {
+          event.preventDefault();
+          personalInfoForm();
+        });
 
         containerBtnSave.appendChild(btnSave);
         form.appendChild(containerBtnSave);
@@ -77,7 +77,9 @@ function loadBoxButtons(txtSave) {
 }
 
 window.onload = function () {
-  loadTitle("Insert your personal information");
-  loadUserData();
-  loadBoxButtons("Save");
+  executingPage()
+    .then(() => loadTitle("Insert your personal information"))
+    .then(() => loadUserData())
+    .then(() => loadBoxButtons("Save"))
+    .catch((error) => console.error(error));
 };
