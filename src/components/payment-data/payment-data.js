@@ -104,6 +104,6 @@ window.onload = function () {
   executingPage()
     .then(() => loadTitle("Insert payment data"))
     .then(() => loadPaymentData())
-    .then(() => loadBoxButtons("Pay"))
+    .then(() => loadBoxButtons("Save"))
     .catch((error) => console.error(error));
 };
