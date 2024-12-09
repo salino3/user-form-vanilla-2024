@@ -14,7 +14,7 @@ function addressInfoForm() {
   if (allFieldsFilled) {
     localStorage.setItem("address", JSON.stringify(address));
 
-    window.location.href = "/";
+    window.location.href = "/src/components/payment-data/payment-data.html";
   } else {
     alert("Please refill all inputs.");
   }
