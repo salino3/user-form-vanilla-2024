@@ -1,3 +1,5 @@
+import { executingPage } from "../../js/app.js";
+
 function personalInfoForm() {
   const user = {
     name: document.getElementById("name").value,
@@ -75,7 +77,9 @@ function loadBoxButtons(txtSave) {
 }
 
 window.onload = function () {
-  loadTitle("Insert your personal information");
-  loadUserData();
-  loadBoxButtons("Save");
+  executingPage()
+    .then(() => loadTitle("Insert your personal information"))
+    .then(() => loadUserData())
+    .then(() => loadBoxButtons("Save"))
+    .catch((error) => console.error(error));
 };
