@@ -14,7 +14,7 @@ function paymentInfoForm() {
   if (allFieldsFilled) {
     localStorage.setItem("payment", JSON.stringify(payment));
 
-    window.location.href = "/src/components/payment-data/payment-data.html";
+    window.location.href = "/";
   } else {
     alert("Please refill all inputs.");
   }
@@ -46,10 +46,64 @@ function loadPaymentData() {
     .catch((error) => console.error("Error downloading title:", error));
 }
 
+function loadBoxButtons(txtSave) {
+  fetch("/src/common-app/box-buttons.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("main_page").innerHTML += data;
+      let form = document.getElementById("paymentInfoForm");
+
+      let containerBtnSave = document.getElementById("containerBoxButtons");
+      let btnSave = document.getElementById("btnSave");
+      let spanTitle = document.getElementById("spanTitle");
+
+      if (containerBtnSave && btnSave && spanTitle) {
+        containerBtnSave.style.marginTop = "var(--size-primary)";
+        btnSave.textContent = txtSave;
+        btnSave.addEventListener("click", function (event) {
+          event.preventDefault();
+          paymentInfoForm();
+        });
+        spanTitle.addEventListener("click", function (event) {
+          event.preventDefault();
+          window.location.href = "../addess-details/address-details.html";
+        });
+
+        // Input Values
+        const cardNumber = document.getElementById("cardNumber");
+        const cardHolderName = document.getElementById("cardHolderName");
+        const expiryDate = document.getElementById("expiryDate");
+        const cvv = document.getElementById("cvv");
+
+        const storedUser = JSON.parse(localStorage.getItem("payment"));
+        if (storedUser) {
+          console.log("Stored payment data:", storedUser);
+          if (storedUser.cardNumber) {
+            cardNumber.value = storedUser.cardNumber;
+          }
+          if (storedUser.cardHolderName) {
+            cardHolderName.value = storedUser.cardHolderName;
+          }
+          if (storedUser.expiryDate) {
+            expiryDate.value = storedUser.expiryDate;
+          }
+          if (storedUser.cvv) {
+            cvv.value = storedUser.cvv;
+          }
+        }
+        containerBtnSave.appendChild(btnSave);
+        form.appendChild(containerBtnSave);
+      } else {
+        console.error("btnSave is not present in the DOM");
+      }
+    })
+    .catch((error) => console.error("Error downloading box buttons:", error));
+}
+
 window.onload = function () {
   executingPage()
     .then(() => loadTitle("Insert payment data"))
     .then(() => loadPaymentData())
-    //   .then(() => loadBoxButtons("Save"))
+    .then(() => loadBoxButtons("Pay"))
     .catch((error) => console.error(error));
 };
