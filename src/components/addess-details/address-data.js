@@ -75,19 +75,19 @@ function loadBoxButtons(txtSave) {
         const country = document.getElementById("country");
         const zipCode = document.getElementById("zipCode");
 
-        const storedUser = JSON.parse(localStorage.getItem("address"));
-        if (storedUser) {
-          if (storedUser.street) {
-            street.value = storedUser.street;
+        const storedAddress = JSON.parse(localStorage.getItem("address"));
+        if (storedAddress) {
+          if (storedAddress.street) {
+            street.value = storedAddress.street;
           }
-          if (storedUser.city) {
-            city.value = storedUser.city;
+          if (storedAddress.city) {
+            city.value = storedAddress.city;
           }
-          if (storedUser.country) {
-            country.value = storedUser.country;
+          if (storedAddress.country) {
+            country.value = storedAddress.country;
           }
-          if (storedUser.zipCode) {
-            zipCode.value = storedUser.zipCode;
+          if (storedAddress.zipCode) {
+            zipCode.value = storedAddress.zipCode;
           }
         }
         containerBtnSave.appendChild(btnSave);
