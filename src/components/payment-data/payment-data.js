@@ -75,20 +75,20 @@ function loadBoxButtons(txtSave) {
         const expiryDate = document.getElementById("expiryDate");
         const cvv = document.getElementById("cvv");
 
-        const storedUser = JSON.parse(localStorage.getItem("payment"));
-        if (storedUser) {
-          console.log("Stored payment data:", storedUser);
-          if (storedUser.cardNumber) {
-            cardNumber.value = storedUser.cardNumber;
+        const storedPayment = JSON.parse(localStorage.getItem("payment"));
+        if (storedPayment) {
+          console.log("Stored payment data:", storedPayment);
+          if (storedPayment.cardNumber) {
+            cardNumber.value = storedPayment.cardNumber;
           }
-          if (storedUser.cardHolderName) {
-            cardHolderName.value = storedUser.cardHolderName;
+          if (storedPayment.cardHolderName) {
+            cardHolderName.value = storedPayment.cardHolderName;
           }
-          if (storedUser.expiryDate) {
-            expiryDate.value = storedUser.expiryDate;
+          if (storedPayment.expiryDate) {
+            expiryDate.value = storedPayment.expiryDate;
           }
-          if (storedUser.cvv) {
-            cvv.value = storedUser.cvv;
+          if (storedPayment.cvv) {
+            cvv.value = storedPayment.cvv;
           }
         }
         containerBtnSave.appendChild(btnSave);
