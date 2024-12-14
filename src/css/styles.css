@@ -160,6 +160,27 @@
     max-width: 90vw;
   }
 }
+.containerPaidPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--size-primary);
+  padding: var(--size-double);
+  color: var(--color-primary);
+  background: var(--color-secondary-background);
+  height: 100vh;
+  height: 100%;
+}
+.containerPaidPage .paragraphConfirmation {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--size-primary);
+  font-size: 22px;
+}
+
 :root {
   --color-primary: #232c2b;
   --color-secondary: #444d3a;
