@@ -1,0 +1,37 @@
+.containerPaidPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--size-primary);
+  padding: var(--size-double);
+  color: var(--color-primary);
+  background: var(--color-secondary-background);
+  height: 100vh;
+  min-height: 100%;
+
+  .paragraphConfirmation {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--size-primary);
+    font-size: 22px;
+  }
+
+  .containerData_02 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--size-primary);
+    border: groove 4px green;
+    border-radius: var(--size-primary);
+    .boxData_02 {
+      color: var(--color-06);
+      padding: 0 var(--size-half);
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+}

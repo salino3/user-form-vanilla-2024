@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paid page</title>
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="icon" type="image/x-icon" href="../../assets/icons/Vector.svg" />
+  </head>
+  <main id="main_page">
+    <div class="containerPaidPage">
+      <h1>
+        Thank you for your purchase!
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="22"
+          viewBox="0 0 100 100"
+          fill="none"
+        >
+          <!-- Circle -->
+          <circle
+            cx="50"
+            cy="50"
+            r="45"
+            stroke="green"
+            stroke-width="12"
+            fill="#3f0c09"
+          />
+          <!-- Check -->
+          <path
+            d="M30 50 L45 65 L75 30"
+            stroke="green"
+            stroke-width="12"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </h1>
+      <p class="paragraphConfirmation">
+        Your order has been successfully processed. You will receive an email
+        confirmation shortly.
+      </p>
+      <div class="containerData_02">
+        <div class="boxData_02">
+          <h2>Personal informations</h2>
+          <ul>
+            <li>
+              Card number: 1234 5678 9012 3456
+            </li>
+            <li>
+              Expiration date: 12/24
+            </li>
+            <li>
+              CVV: 123
+            </li>
+          </ul>
+        </div>
+        <div class="boxData_02">
+          <h2>Shipping address</h2>
+          <ul>
+            <li>Name: John Doe</li>
+            <li>Street: 123 Main St</li>
+            <li>City: New York</li>
+            <li>State: NY</li>
+            <li>Zip code: 10001</li>
+          </ul>
+    
+      </div>
+    </div>
+    <script type="module" src="../../js/app.js"></script>
+    <script  type="module"  src="./address-data.js"></script>
+  </main>
+</html>

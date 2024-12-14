@@ -14,7 +14,7 @@ function paymentInfoForm() {
   if (allFieldsFilled) {
     localStorage.setItem("payment", JSON.stringify(payment));
 
-    window.location.href = "/";
+    window.location.href = "/src/components/paid-page/paid-page.html";
   } else {
     alert("Please refill all inputs.");
   }
