@@ -194,6 +194,12 @@
   width: 100%;
   box-sizing: border-box;
 }
+.containerPaidPage .containerData_02 .boxData_02 ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
 
 :root {
   --color-primary: #232c2b;
