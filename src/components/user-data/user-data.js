@@ -90,8 +90,12 @@ function loadBoxButtons(txtSave) {
         }
 
         //
-        containerBtnSave.appendChild(btnSave);
-        form.appendChild(containerBtnSave);
+        if (containerBtnSave && btnSave) {
+          containerBtnSave.appendChild(btnSave);
+        }
+        if (form && containerBtnSave) {
+          form.appendChild(containerBtnSave);
+        }
       } else {
         console.error("btnSave is not present in the DOM");
       }
