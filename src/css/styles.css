@@ -21,7 +21,7 @@
   max-width: 70vw;
   min-height: 50vh;
   height: 100%;
-  color: var(--color-secondary);
+  color: var(--color-text-quaternary);
 }
 .containerUserDataForm .containerForm #personalInfoForm {
   display: flex;
@@ -75,7 +75,7 @@
   max-width: 70vw;
   min-height: 50vh;
   height: 100%;
-  color: var(--color-secondary);
+  color: var(--color-text-quaternary);
 }
 .containerAddresDataForm .containerForm #addressInfoForm {
   display: flex;
@@ -129,7 +129,7 @@
   max-width: 70vw;
   min-height: 50vh;
   height: 100%;
-  color: var(--color-secondary);
+  color: var(--color-text-quaternary);
 }
 .containerPaymentDataForm .containerForm #paymentInfoForm {
   display: flex;
@@ -167,7 +167,7 @@
   align-items: center;
   gap: var(--size-primary);
   padding: var(--size-double);
-  color: var(--color-primary);
+  color: var(--color-text-quaternary);
   background: var(--color-secondary-background);
   min-height: 100vh;
 }
@@ -189,7 +189,6 @@
   border-radius: var(--size-primary);
 }
 .containerPaidPage .containerData_02 .boxData_02 {
-  color: var(--color-06);
   padding: 0 var(--size-half);
   width: 100%;
   box-sizing: border-box;
@@ -197,12 +196,19 @@
 .containerPaidPage .containerData_02 .boxData_02 h2 {
   margin: 0;
   padding: 0;
+  color: var(--color-06);
 }
 .containerPaidPage .containerData_02 .boxData_02 ul {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+}
+.containerPaidPage .containerData_02 .boxData_02 ul li {
+  color: var(--color-text-quaternary);
+}
+.containerPaidPage .containerData_02 .boxData_02 ul li span {
+  color: var(--color-06);
 }
 
 :root {

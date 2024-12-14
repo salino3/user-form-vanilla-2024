@@ -5,7 +5,7 @@
   align-items: center;
   gap: var(--size-primary);
   padding: var(--size-double);
-  color: var(--color-primary);
+  color: var(--color-text-quaternary);
   background: var(--color-secondary-background);
   min-height: 100vh;
 
@@ -28,19 +28,25 @@
     border: groove 4px green;
     border-radius: var(--size-primary);
     .boxData_02 {
-      color: var(--color-06);
       padding: 0 var(--size-half);
       width: 100%;
       box-sizing: border-box;
       h2 {
         margin: 0;
         padding: 0;
+        color: var(--color-06);
       }
       ul {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
+        li {
+          color: var(--color-text-quaternary);
+          span {
+            color: var(--color-06);
+          }
+        }
       }
     }
   }
