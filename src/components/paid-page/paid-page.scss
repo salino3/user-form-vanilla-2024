@@ -27,5 +27,11 @@
     gap: var(--size-primary);
     border: groove 4px green;
     border-radius: var(--size-primary);
+    .boxData_02 {
+      color: var(--color-06);
+      padding: 0 var(--size-half);
+      width: 100%;
+      box-sizing: border-box;
+    }
   }
 }
