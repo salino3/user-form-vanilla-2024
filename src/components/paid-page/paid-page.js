@@ -11,11 +11,6 @@ function containerPaidPage() {
   const span6 = document.getElementById("span6");
   const span7 = document.getElementById("span7");
   const span8 = document.getElementById("span8");
-  const storedPayment = JSON.parse(localStorage.getItem("payment"));
-  const span9 = document.getElementById("span9");
-  const span10 = document.getElementById("span10");
-  const span11 = document.getElementById("span11");
-  const span12 = document.getElementById("span12");
 
   if (storedUser) {
     if (span1 && storedUser.name) {
@@ -44,21 +39,6 @@ function containerPaidPage() {
     }
     if (span8 && storedAddress.zipCode) {
       span8.textContent = storedAddress.zipCode;
-    }
-  }
-  //
-  if (storedPayment) {
-    if (span9 && storedPayment.cardNumber) {
-      span9.textContent = storedPayment.cardNumber;
-    }
-    if (span10 && storedPayment.cardHolderName) {
-      span10.textContent = storedPayment.cardHolderName;
-    }
-    if (span11 && storedPayment.expiryDate) {
-      span11.textContent = storedPayment.expiryDate;
-    }
-    if (span12 && storedPayment.cvv) {
-      span12.textContent = storedPayment.cvv;
     }
   }
 }

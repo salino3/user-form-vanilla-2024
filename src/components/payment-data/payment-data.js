@@ -7,13 +7,10 @@ function paymentInfoForm() {
     expiryDate: document.getElementById("expiryDate").value,
     cvv: document.getElementById("cvv").value,
   };
-  console.log("Payment data:", payment);
 
   const allFieldsFilled = Object.keys(payment).every((key) => payment[key]);
 
   if (allFieldsFilled) {
-    localStorage.setItem("payment", JSON.stringify(payment));
-
     window.location.href = "/src/components/paid-page/paid-page.html";
   } else {
     alert("Please refill all inputs.");
@@ -69,28 +66,6 @@ function loadBoxButtons(txtSave) {
           window.location.href = "../addess-details/address-details.html";
         });
 
-        // Input Values
-        const cardNumber = document.getElementById("cardNumber");
-        const cardHolderName = document.getElementById("cardHolderName");
-        const expiryDate = document.getElementById("expiryDate");
-        const cvv = document.getElementById("cvv");
-
-        const storedPayment = JSON.parse(localStorage.getItem("payment"));
-        if (storedPayment) {
-          console.log("Stored payment data:", storedPayment);
-          if (storedPayment.cardNumber) {
-            cardNumber.value = storedPayment.cardNumber;
-          }
-          if (storedPayment.cardHolderName) {
-            cardHolderName.value = storedPayment.cardHolderName;
-          }
-          if (storedPayment.expiryDate) {
-            expiryDate.value = storedPayment.expiryDate;
-          }
-          if (storedPayment.cvv) {
-            cvv.value = storedPayment.cvv;
-          }
-        }
         containerBtnSave.appendChild(btnSave);
         form.appendChild(containerBtnSave);
       } else {
