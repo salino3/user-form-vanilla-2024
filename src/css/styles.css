@@ -193,6 +193,10 @@
   width: 100%;
   box-sizing: border-box;
 }
+.containerPaidPage .containerData_02 .boxData_02 h2 {
+  margin: 0;
+  padding: 0;
+}
 .containerPaidPage .containerData_02 .boxData_02 ul {
   display: flex;
   flex-direction: column;

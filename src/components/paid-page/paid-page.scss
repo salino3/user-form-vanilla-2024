@@ -31,6 +31,10 @@
       padding: 0 var(--size-half);
       width: 100%;
       box-sizing: border-box;
+      h2 {
+        margin: 0;
+        padding: 0;
+      }
       ul {
         display: flex;
         flex-direction: column;
