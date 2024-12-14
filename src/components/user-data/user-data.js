@@ -75,16 +75,16 @@ function loadBoxButtons(txtSave) {
 
         const storedUser = JSON.parse(localStorage.getItem("user"));
         if (storedUser) {
-          if (storedUser.name) {
+          if (storedUser.name || name) {
             name.value = storedUser.name;
           }
-          if (storedUser.surname) {
+          if (storedUser.surname || surname) {
             surname.value = storedUser.surname;
           }
-          if (storedUser.email) {
+          if (storedUser.email || email) {
             email.value = storedUser.email;
           }
-          if (storedUser.phoneNumber) {
+          if (storedUser.phoneNumber || phoneNumber) {
             phoneNumber.value = storedUser.phoneNumber;
           }
         }
