@@ -24,9 +24,9 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    // gap: var(--size-primary);
     border: groove 4px green;
     border-radius: var(--size-primary);
+    padding: 0 var(--size-primary);
     .boxData_02 {
       padding: 0 var(--size-half);
       width: 100%;

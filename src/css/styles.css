@@ -187,6 +187,7 @@
   align-items: center;
   border: groove 4px green;
   border-radius: var(--size-primary);
+  padding: 0 var(--size-primary);
 }
 .containerPaidPage .containerData_02 .boxData_02 {
   padding: 0 var(--size-half);
